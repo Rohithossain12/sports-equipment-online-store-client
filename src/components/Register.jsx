@@ -1,7 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import toast, { Toaster } from "react-hot-toast";
+import { AuthContext } from "./AuthProvider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Register = () => {
+  const navigate = useNavigate();
+  const { loginWithGoogle, setUsers, users } = useContext(AuthContext);
+
+  const handleGoogleLogin = () => {
+    loginWithGoogle()
+      .then((result) => {
+        const user = result.user;
+        setUsers(user);
+        toast.success("User Register successful");
+
+        navigate("/");
+      })
+      .catch(() => {
+        toast.error("User Register Unsuccessful");
+      });
+  };
   return (
     <div className=" mt-10 mb-10 container mx-auto px-5 ">
       <div className="  max-w-lg mx-auto border bg-green-500 p-5 rounded-lg">
@@ -69,21 +88,22 @@ const Register = () => {
           </div>
 
           <div className="max-w-lg mt-6">
-            <button className="btn  w-full  font-bold">
-              Register
-            </button>
+            <button className="btn  w-full  font-bold">Register</button>
           </div>
         </form>
         <div className="max-w-lg px-8">
-        <button className="btn w-full font-bold ">Login With Google</button>
+          <button onClick={handleGoogleLogin} className="btn w-full font-bold ">
+            <FaGoogle /> Login With Google
+          </button>
         </div>
-        <p className="ml-8 font-bold pt-5">
+        <p className="ml-8 font-bold pt-5 pb-5">
           You have an Already Account ?{" "}
           <Link to="/login" className="text-red-500">
             Please Login
           </Link>{" "}
         </p>
       </div>
+      <Toaster />
     </div>
   );
 };
