@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider/AuthProvider";
 import { ImGift } from "react-icons/im";
 
 const Header = () => {
-  const { users } = useContext(AuthContext);
+  const { users, logout } = useContext(AuthContext);
   const links = (
     <>
       <li>
@@ -22,7 +22,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="bg-[#D2B48C] ">
+    <div className=" bg-blue-400">
       <div className="navbar container mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -49,24 +49,40 @@ const Header = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <img
+            className=" h-10 w-24 md:w-36 md:h-14 "
+            src="https://i.ibb.co.com/xHrcBkp/images-removebg-preview.png"
+            alt=""
+          />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className="navbar-end">
-          {users?.email ? (
-            <p className="  ">
+        <div className="navbar-end flex gap-3">
+          {users && (
+            <p className=" ">
               <img
-                className="w-12 h-12 rounded-full"
-                src={users?.photoURL}
+                title={users.displayName}
+                className="w-12 h-12 border cursor-pointer object-cover rounded-full"
+                src={users.photoURL}
                 alt=""
               />
             </p>
+          )}
+          {users && users?.email ? (
+            <button
+              onClick={logout}
+              className="px-3 py-2 font-semibold bg-white rounded-lg"
+            >
+              Logout
+            </button>
           ) : (
-            <NavLink className="py-2 px-3 bg-white rounded-lg" to="/login">
+            <Link
+              to="/login"
+              className="px-4 py-2 bg-white rounded-lg font-semibold"
+            >
               Login
-            </NavLink>
+            </Link>
           )}
         </div>
       </div>
