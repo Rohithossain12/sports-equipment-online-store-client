@@ -27,7 +27,7 @@ const Login = () => {
   return (
     <div className=" mt-10 mb-10 container mx-auto px-5">
       <div className="  max-w-lg mx-auto bg-green-500  p-5 rounded-lg">
-        <h1 className="text-2xl font-bold ml-8">Please Register Now </h1>
+        <h1 className="text-2xl font-bold ml-8">Please Login Now </h1>
         <form className="card-body ">
           <div className="form-control max-w-lg ">
             <label className="label">
@@ -55,7 +55,7 @@ const Login = () => {
           </div>
 
           <div className="max-w-lg mt-6">
-            <button className="btn  w-full  font-bold">Register</button>
+            <button className="btn  w-full  font-bold">Login</button>
           </div>
         </form>
         <div className="max-w-lg px-8">
@@ -67,7 +67,7 @@ const Login = () => {
         <p className="ml-8 font-bold pt-5 pb-5">
           You have an Already Account ?{" "}
           <Link to="/register" className="text-red-500">
-            Please Login
+            Please Register
           </Link>{" "}
         </p>
       </div>
