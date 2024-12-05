@@ -4,39 +4,34 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllSportsEquipment = () => {
   const products = useLoaderData();
   return (
-    <div className="min-h-screen mt-10 ">
-      <div className="overflow-x-auto  container mx-auto  ">
-        <table className="table ">
-          {/* head */}
-          <thead>
+    <div className="overflow-x-auto  px-5 container mx-auto mt-10 mb-12">
+      <table className="table table-xs table-pin-rows table-pin-cols">
+        <thead>
+          <tr>
+            <td>Name</td>
+            <td>Category</td>
+            <td>Price</td>
+            <td>Action</td>
+          </tr>
+        </thead>
+        <tbody>
+          {products.map((product) => (
             <tr>
-              <th>Product Id</th>
-              <th>Name</th>
-              <th>Category</th>
-              <th>Price</th>
-              <th>Action</th>
+              <td className="p-5">{product.name}</td>
+              <td>{product.category}</td>
+              <td>{product.price}</td>
+              <td>
+                <Link
+                  to={`/viewDetails/${product._id}`}
+                  className="px-2 py-2  bg-green-500 rounded-lg"
+                >
+                  Details
+                </Link>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {products.map((product) => (
-              <tr className="bg-base-200  ">
-                <th>{product._id}</th>
-                <td>{product.name}</td>
-                <td>{product.category}</td>
-                <td>{product.price}</td>
-                <td>
-                  <Link
-                    to={`/viewDetails/${product._id}`}
-                    className="px-3 py-2 bg-green-500 rounded-lg"
-                  >
-                    View Details
-                  </Link>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
