@@ -20,7 +20,7 @@ const Register = () => {
       .then((result) => {
         const user = result.user;
         setUsers(user);
-        toast.success("User Register successful");
+        toast.success("User Register Successful");
 
         navigate("/");
       })

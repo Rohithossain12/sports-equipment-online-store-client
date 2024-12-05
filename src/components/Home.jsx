@@ -3,7 +3,7 @@ import { Toaster } from "react-hot-toast";
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-h-screen">
       <Toaster />
     </div>
   );

@@ -9,6 +9,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../../firebase.config";
+import toast from "react-hot-toast";
 
 export const AuthContext = createContext(null);
 
@@ -24,10 +25,9 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const updateUserProfile = (profile)=>{
-  return updateProfile(auth.currentUser,profile) 
-  }
-
+  const updateUserProfile = (profile) => {
+    return updateProfile(auth.currentUser, profile);
+  };
 
   const loginUser = (email, password) => {
     setLoading(true);
@@ -39,7 +39,11 @@ const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    return signOut(auth);
+    signOut(auth)
+      .then(() => {
+        toast.success("User Logout Successful");
+      })
+      .catch(() => {});
   };
 
   useEffect(() => {

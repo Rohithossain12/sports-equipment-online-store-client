@@ -4,6 +4,7 @@ import { AuthContext } from "./AuthProvider/AuthProvider";
 
 const Header = () => {
   const { users, logout } = useContext(AuthContext);
+
   const links = (
     <>
       <li>
@@ -58,23 +59,32 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end flex gap-3">
-          {users && (
-            <p className=" ">
-              <img
-                title={users.displayName}
-                className="w-12 h-12 border cursor-pointer object-cover rounded-full"
-                src={users.photoURL}
-                alt=""
-              />
-            </p>
-          )}
-          {users && users?.email ? (
-            <button
-              onClick={logout}
-              className="px-3 py-2 font-semibold bg-white rounded-lg"
-            >
-              Logout
-            </button>
+          {/* // title={users.displayName} */}
+          {/* {users && <p className=" "></p>} */}
+
+          {users?.email ? (
+            <div className="dropdown ">
+              <div tabIndex={0} role="button" className=" m-1">
+                <img
+                  className="w-12 h-12 border cursor-pointer object-cover rounded-full "
+                  src={users.photoURL}
+                  alt=""
+                />
+              </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content mt-2 menu bg-base-100 rounded-box z-[1] w-52 p-6 shadow -right-0  "
+              >
+                <li className="mb-2">
+                  <p className="font-bold">{users.displayName}</p>
+                </li>
+                <li>
+                  <button onClick={logout} className="btn bg-green-500">
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
           ) : (
             <Link
               to="/login"

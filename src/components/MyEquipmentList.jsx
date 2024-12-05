@@ -2,7 +2,7 @@ import React from 'react';
 
 const MyEquipmentList = () => {
     return (
-        <div>
+        <div className='min-h-screen'>
             
         </div>
     );

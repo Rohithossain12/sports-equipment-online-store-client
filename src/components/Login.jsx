@@ -20,12 +20,12 @@ const Login = () => {
       .then((result) => {
         const user = result.user;
         setUsers(user);
-        toast.success("User Register successful");
+        toast.success("User Login Successful");
 
         navigate("/");
       })
       .catch(() => {
-        toast.error("User Register Unsuccessful");
+        toast.error("User Login Unsuccessful");
       });
   };
 
