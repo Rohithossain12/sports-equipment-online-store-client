@@ -1,97 +1,20 @@
-import React, { useContext } from "react";
-import Swal from "sweetalert2";
-import { AuthContext } from "./AuthProvider/AuthProvider";
+import React from "react";
 
-const AddEquipment = () => {
-  const { users } = useContext(AuthContext);
-  const { displayName, email } = users || {};
-  const handleAddEquipment = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const name = form.name.value;
-    const category = form.category.value;
-    const description = form.description.value;
-    const price = form.price.value;
-    const rating = form.rating.value;
-    const customization = form.customization.value;
-    const time = form.time.value;
-    const quantity = form.quantity.value;
-    const photo = form.photo.value;
-
-    const newProduct = {
-      name,
-      displayName,
-      email,
-      category,
-      description,
-      price,
-      rating,
-      customization,
-      time,
-      quantity,
-      photo,
-    };
-
-    // sent data to the server
-    fetch("http://localhost:5000/product", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(newProduct),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.insertedId) {
-          Swal.fire({
-            title: "Success!",
-            text: "Equipment Added Successfully",
-            icon: "success",
-            confirmButtonText: "Close",
-          });
-          form.reset();
-        }
-      });
-  };
+const UpdateProduct = () => {
   return (
     <div className="mt-10 mb-10 bg-[#F4F3F0] container mx-auto rounded-lg">
       <div className="card   shrink-0 p-16">
-        <h1 className="text-[#374151] md:text-2xl text-xl lg:text-4xl font-bold text-center">
-          Add New Equipment
+        <h1 className="text-[#374151] text-4xl font-bold text-center">
+          Update Equipment
         </h1>
 
         <p className="text-center mt-5">
-          "Gear up with our sports online store! Explore a wide selection of
-          high-quality sports equipment, apparel, and accessories for every
-          athlete and fitness enthusiast. Shop now for unbeatable performance
-          and fast delivery!"
+          "Gear up for greatness with our extensive collection of sports
+          products and equipment. Whether you're a beginner or a pro, find
+          top-quality gear to enhance your performance and fuel your passion for
+          sports." Let me know if you'd like more options!
         </p>
-        <form onSubmit={handleAddEquipment} className="card-body">
-          {/* email and user name row */}
-          <div className="md:flex gap-5">
-            <div className="form-control md:w-1/2">
-              <label className="label">
-                <span className="label-text font-bold">Email</span>
-              </label>
-              <input
-                readOnly
-                value={email}
-                className="input input-bordered w-full"
-                required
-              />
-            </div>
-            <div className="form-control md:w-1/2">
-              <label className="label">
-                <span className="label-text font-bold">User Name</span>
-              </label>
-              <input
-                readOnly
-                value={displayName}
-                className="input input-bordered w-full"
-                required
-              />
-            </div>
-          </div>
+        <form className="card-body">
           {/* item name and category row */}
           <div className="md:flex gap-5">
             <div className="form-control md:w-1/2">
@@ -147,7 +70,7 @@ const AddEquipment = () => {
               />
             </div>
           </div>
-          {/* Rating and Customization row
+          {/*Rating and Customization row
            */}
 
           <div className="md:flex gap-5">
@@ -176,7 +99,7 @@ const AddEquipment = () => {
               />
             </div>
           </div>
-          {/* Delivery Time and Product Quantity row */}
+          {/* delivery time and Quantity row */}
           <div className="md:flex gap-5">
             <div className="form-control md:w-1/2">
               <label className="label">
@@ -218,7 +141,7 @@ const AddEquipment = () => {
 
           <div className="form-control mt-6">
             <button className="btn bg-[#D2B48C] font-bold">
-              Add Equipment
+              Update Equipment
             </button>
           </div>
         </form>
@@ -227,4 +150,4 @@ const AddEquipment = () => {
   );
 };
 
-export default AddEquipment;
+export default UpdateProduct;

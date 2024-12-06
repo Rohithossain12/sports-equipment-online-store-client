@@ -1,10 +1,10 @@
-import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllSportsEquipment = () => {
   const products = useLoaderData();
+
   return (
-    <div className="overflow-x-auto  px-5 container mx-auto mt-10 mb-12">
+    <div className="overflow-x-auto min-h-screen px-5 container mx-auto mt-10 mb-12">
       <table className="table table-xs table-pin-rows table-pin-cols">
         <thead>
           <tr>
@@ -32,6 +32,11 @@ const AllSportsEquipment = () => {
           ))}
         </tbody>
       </table>
+      <div className="text-center mt-4">
+        <button className="px-3 py-2 rounded-lg bg-green-500">
+          Sort by Price
+        </button>
+      </div>
     </div>
   );
 };

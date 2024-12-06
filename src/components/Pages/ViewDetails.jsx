@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
   const product = useLoaderData();
+  console.log(product);
   const {
     name,
     category,
@@ -14,6 +15,7 @@ const ViewDetails = () => {
     time,
     quantity,
   } = product || {};
+
   return (
     <div className="mt-10 mb-10 px-5   ">
       <div className="flex flex-col md:flex-row max-w-2xl  border rounded-xl  space-y-4  mx-auto gap-5 ">

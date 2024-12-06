@@ -14,6 +14,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import ViewDetails from "./components/Pages/ViewDetails";
+import UpdateProduct from "./components/UpdateProduct";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+
       {
         path: "/login",
         element: <Login></Login>,
@@ -53,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/update",
+        element: <UpdateProduct></UpdateProduct>,
       },
       {
         path: "/viewDetails/:id",
