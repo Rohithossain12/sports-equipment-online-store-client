@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyEquipmentCard = ({ product, setProducts, products }) => {
   const { _id, name, photo, category, price, quantity } = product || {};
+
+  //   const [pro, setPro] = useState(product);
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -20,15 +23,15 @@ const MyEquipmentCard = ({ product, setProducts, products }) => {
         })
           .then((res) => res.json())
           .then((data) => {
-            if (data.deletedCount) {
+            console.log(data);
+            if (data.deletedCount > 0) {
               Swal.fire({
                 title: "Deleted!",
                 text: "product has been deleted.",
                 icon: "success",
               });
-              const remainingCoffee = product.filter((pd) => pd._id !== id);
-
-              setProducts(remainingCoffee);
+              const remaining = products.filter((pro) => pro._id !== id);
+              setProducts(remaining);
             }
           });
       }

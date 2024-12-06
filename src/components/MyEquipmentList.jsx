@@ -20,7 +20,7 @@ const MyEquipmentList = () => {
           <MyEquipmentCard
             product={product}
             products={products}
-            setProducts={products}
+            setProducts={setProducts}
           ></MyEquipmentCard>
         ))}
       </div>
