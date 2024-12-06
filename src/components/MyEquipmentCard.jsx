@@ -15,7 +15,7 @@ const MyEquipmentCard = ({ product, setProducts, products }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/product/${_id}`, {
+        fetch(`http://localhost:5000/product/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -26,9 +26,7 @@ const MyEquipmentCard = ({ product, setProducts, products }) => {
                 text: "product has been deleted.",
                 icon: "success",
               });
-              const remainingCoffee = products.filter(
-                (product) => product._id !== id
-              );
+              const remainingCoffee = product.filter((pd) => pd._id !== id);
 
               setProducts(remainingCoffee);
             }
@@ -52,7 +50,7 @@ const MyEquipmentCard = ({ product, setProducts, products }) => {
         <p>Price : {price} tk</p>
         <p>Quantity : {quantity}</p>
         <div className="card-actions justify-end">
-          <Link to="/update">Update</Link>
+          <Link to={`/update/${_id}`}>Update</Link>
           <button onClick={() => handleDelete(_id)}>Delete</button>
         </div>
       </div>
