@@ -79,7 +79,7 @@ const SportingGoods = () => {
       <p>
         With our wide selection of Fitness & Training Equipment, you can be sure
         to amp up your current workout routine, start new healthy habits, and
-        fill your home gym in order to be your best self. 
+        fill your home gym in order to be your best self.
       </p>
     </div>
   );

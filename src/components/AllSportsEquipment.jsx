@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllSportsEquipment = () => {
@@ -5,6 +6,9 @@ const AllSportsEquipment = () => {
 
   return (
     <div className="overflow-x-auto min-h-screen px-5 container mx-auto mt-10 mb-12">
+      <Helmet>
+        <title>Sport Specialist | All Sports Equipment</title>
+      </Helmet>
       <table className="table table-xs table-pin-rows table-pin-cols">
         <thead>
           <tr>

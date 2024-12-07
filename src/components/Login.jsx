@@ -3,6 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -61,6 +62,9 @@ const Login = () => {
 
   return (
     <div className=" mt-10 mb-10 container mx-auto px-5">
+      <Helmet>
+        <title>Sport Specialist | Login </title>
+      </Helmet>
       <div className="  max-w-lg mx-auto bg-green-500  p-5 rounded-lg">
         <h1 className="text-2xl font-bold ml-8">Please Login Now </h1>
         <form onSubmit={handleLogin} className="card-body ">

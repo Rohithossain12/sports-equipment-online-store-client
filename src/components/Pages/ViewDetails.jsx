@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 
 const ViewDetails = () => {
@@ -18,6 +19,9 @@ const ViewDetails = () => {
 
   return (
     <div className="mt-10 mb-10 px-5   ">
+      <Helmet>
+        <title>Sport Specialist | View Details</title>
+      </Helmet>
       <div className="flex flex-col md:flex-row max-w-2xl  border rounded-xl  space-y-4  mx-auto gap-5 ">
         <div className=" p-4 pr-0 ">
           <img

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyEquipmentCard = ({ product, setProducts, products }) => {
-  const { _id, name, photo, category, price, quantity } = product || {};
+    const { _id, name, photo, category, price, quantity } = product || {};
 
   //   const [pro, setPro] = useState(product);
 

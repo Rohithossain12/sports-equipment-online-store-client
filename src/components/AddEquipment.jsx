@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "./AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const AddEquipment = () => {
   const { users } = useContext(AuthContext);
@@ -55,6 +56,9 @@ const AddEquipment = () => {
   };
   return (
     <div className="mt-10 mb-10 bg-[#F4F3F0] container mx-auto rounded-lg">
+      <Helmet>
+        <title>Sport Specialist | Add Equipment</title>
+      </Helmet>
       <div className="card   shrink-0 p-16">
         <h1 className="text-[#374151] md:text-2xl text-xl lg:text-4xl font-bold text-center">
           Add New Equipment

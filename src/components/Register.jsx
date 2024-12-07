@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 import { AuthContext } from "./AuthProvider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const navigate = useNavigate();
@@ -72,6 +73,9 @@ const Register = () => {
 
   return (
     <div className=" mt-10 mb-10 container mx-auto px-5 ">
+      <Helmet>
+        <title>Sport Specialist | Register</title>
+      </Helmet>
       <div className="  max-w-lg mx-auto border bg-green-500 p-5 rounded-lg">
         <h1 className="text-2xl font-bold ml-8">Please Register Now </h1>
         <form onSubmit={handleRegister} className="card-body ">

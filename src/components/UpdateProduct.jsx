@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -68,6 +69,9 @@ const UpdateProduct = () => {
 
   return (
     <div className="mt-10 mb-10 bg-[#F4F3F0] container mx-auto rounded-lg">
+     <Helmet>
+        <title>Sport Specialist | Update Product</title>
+     </Helmet>
       <div className="card   shrink-0 p-16">
         <h1 className="text-[#374151] text-4xl font-bold text-center">
           Update Equipment
