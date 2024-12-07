@@ -1,8 +1,22 @@
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllSportsEquipment = () => {
   const products = useLoaderData();
+
+  const [allProduct, setAllProduct] = useState([]);
+
+  useEffect(() => {
+    setAllProduct(products);
+  }, [products]);
+
+  const handleSortByPrice = () => {
+    const sortedProducts = [...allProduct].sort((a, b) => {
+      return Number(b.price) - Number(a.price);
+    });
+    setAllProduct(sortedProducts);
+  };
 
   return (
     <div className="overflow-x-auto min-h-screen px-5 container mx-auto mt-10 mb-12">
@@ -19,15 +33,15 @@ const AllSportsEquipment = () => {
           </tr>
         </thead>
         <tbody>
-          {products.map((product) => (
+          {allProduct.map((product) => (
             <tr>
-              <td className="p-5">{product.name}</td>
-              <td>{product.category}</td>
-              <td>{product.price}</td>
+              <td className="p-5">{product?.name}</td>
+              <td>{product?.category}</td>
+              <td>{product?.price}</td>
               <td>
                 <Link
                   to={`/viewDetails/${product._id}`}
-                  className="px-2 py-2  bg-green-500 rounded-lg"
+                  className="px-3 py-2  bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-white font-bold rounded-full"
                 >
                   Details
                 </Link>
@@ -37,7 +51,10 @@ const AllSportsEquipment = () => {
         </tbody>
       </table>
       <div className="text-center mt-4">
-        <button className="px-3 py-2 rounded-lg bg-green-500">
+        <button
+          onClick={handleSortByPrice}
+          className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% py-1.5 px-3 rounded-2xl mt-2 text-white font-bold"
+        >
           Sort by Price
         </button>
       </div>

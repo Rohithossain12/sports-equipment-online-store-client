@@ -4,6 +4,7 @@ import SportingGoods from "./SportingGoods";
 import { useLoaderData } from "react-router-dom";
 import ProductSection from "./ProductSection";
 import { Helmet } from "react-helmet";
+import SportsCategory from "./SportsCategory";
 
 // import Banner from "./Banner";
 
@@ -15,8 +16,10 @@ const Home = () => {
       <Helmet>
         <title>Sport Specialist | Home </title>
       </Helmet>
-      <Toaster />
-      <Banner></Banner>
+
+      <div className="">
+        <Banner></Banner>
+      </div>
       {/* Product Section Limit 6 card  */}
       <section className="container mx-auto px-5 mt-8 mb-10">
         <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-center">
@@ -38,8 +41,12 @@ const Home = () => {
         </div>
       </section>
       <section className="container mx-auto px-5">
+        <SportsCategory></SportsCategory>
+      </section>
+      <section className="container mx-auto px-5">
         <SportingGoods></SportingGoods>
       </section>
+      <Toaster />
     </div>
   );
 };
