@@ -17,6 +17,7 @@ Our online sports equipment store offers a wide range of high-quality gear for a
 - **sweetalert2**
 - **MongoDb**
 - **React Awesome Reveal**
+- **React Tooltip**
 - **React simple typewriter**
 
 ## Features.

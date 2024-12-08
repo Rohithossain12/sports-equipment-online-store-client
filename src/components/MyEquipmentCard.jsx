@@ -3,9 +3,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const MyEquipmentCard = ({ product, setProducts, products }) => {
-    const { _id, name, photo, category, price, quantity } = product || {};
-
-  //   const [pro, setPro] = useState(product);
+  const { _id, name, photo, category, price, quantity } = product || {};
 
   const handleDelete = (id) => {
     Swal.fire({
@@ -53,8 +51,18 @@ const MyEquipmentCard = ({ product, setProducts, products }) => {
         <p>Price : {price} tk</p>
         <p>Quantity : {quantity}</p>
         <div className=" text-center flex gap-5">
-          <Link to={`/update/${_id}`} className="px-5 py-1.5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full">Update</Link>
-          <button onClick={() => handleDelete(_id)} className="py-1.5 px-5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full">Delete</button>
+          <Link
+            to={`/update/${_id}`}
+            className="px-5 py-1.5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full"
+          >
+            Update
+          </Link>
+          <button
+            onClick={() => handleDelete(_id)}
+            className="py-1.5 px-5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full"
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>

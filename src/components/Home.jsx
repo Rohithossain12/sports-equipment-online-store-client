@@ -9,7 +9,6 @@ import AboutUs from "./AboutUs";
 import { Typewriter } from "react-simple-typewriter";
 
 
-// import Banner from "./Banner";
 
 const Home = () => {
   const products = useLoaderData();

@@ -37,7 +37,6 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     const photo = form.photo.value;
-    console.log({ name, email, password, photo });
 
     // reset error message
     setErrorMessage("");
@@ -130,11 +129,16 @@ const Register = () => {
           </div>
 
           <div className="max-w-lg mt-6">
-            <button className="btn  w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-lg  font-bold">Register</button>
+            <button className="btn  w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-lg  font-bold">
+              Register
+            </button>
           </div>
         </form>
         <div className="max-w-lg px-8">
-          <button onClick={handleGoogleLogin} className="btn w-full font-bold text-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white">
+          <button
+            onClick={handleGoogleLogin}
+            className="btn w-full font-bold text-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white"
+          >
             <FaGoogle /> Login With Google
           </button>
         </div>

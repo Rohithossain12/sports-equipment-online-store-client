@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProductSection = ({ product }) => {
-  const { _id, name, photo, category, price, quantity } = product || {};
+  const { name, photo, category, price, quantity } = product || {};
   return (
     <div className="card bg-base-300 hover:bg-white transition hover:scale-105 shadow-xl">
       <figure className="  p-2">
