@@ -59,7 +59,7 @@ const AddEquipment = () => {
     }
 
     // sent data to the server
-    fetch("http://localhost:5000/product", {
+    fetch("https://sports-equipment-online-store-server-three.vercel.app/product", {
       method: "POST",
       headers: {
         "content-type": "application/json",

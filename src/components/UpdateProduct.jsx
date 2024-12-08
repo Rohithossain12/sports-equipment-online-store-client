@@ -71,7 +71,7 @@ const UpdateProduct = () => {
       return;
     }
 
-    fetch(`http://localhost:5000/product/${_id}`, {
+    fetch(`https://sports-equipment-online-store-server-three.vercel.app/product/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

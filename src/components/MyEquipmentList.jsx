@@ -9,7 +9,7 @@ const MyEquipmentList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/product-by-email/${email}`)
+    fetch(`https://sports-equipment-online-store-server-three.vercel.app/product-by-email/${email}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, []);

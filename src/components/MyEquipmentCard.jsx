@@ -16,7 +16,7 @@ const MyEquipmentCard = ({ product, setProducts, products }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/product/${id}`, {
+        fetch(`https://sports-equipment-online-store-server-three.vercel.app/product/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
