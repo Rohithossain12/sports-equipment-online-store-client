@@ -27,11 +27,11 @@ const UpdateProduct = () => {
     const name = form.name.value;
     const category = form.category.value;
     const description = form.description.value;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value);
     const rating = form.rating.value;
     const customization = form.customization.value;
-    const time = form.time.value;
-    const quantity = form.quantity.value;
+    const time = parseFloat(form.time.value);
+    const quantity = parseFloat(form.quantity.value);
     const photo = form.photo.value;
 
     const updatedProduct = {
@@ -45,6 +45,31 @@ const UpdateProduct = () => {
       quantity,
       photo,
     };
+
+    if (isNaN(price) || price <= 0) {
+      Swal.fire({
+        icon: "error",
+        title: "invalid input",
+        text: "Price added must be number",
+      });
+      return;
+    }
+    if (isNaN(time) || time <= 0) {
+      Swal.fire({
+        icon: "error",
+        title: "invalid input",
+        text: "Time added must be number",
+      });
+      return;
+    }
+    if (isNaN(quantity) || quantity <= 0) {
+      Swal.fire({
+        icon: "error",
+        title: "invalid input",
+        text: "Quantity added must be number",
+      });
+      return;
+    }
 
     fetch(`http://localhost:5000/product/${_id}`, {
       method: "PUT",
@@ -69,9 +94,9 @@ const UpdateProduct = () => {
 
   return (
     <div className="mt-10 mb-10 bg-[#F4F3F0] container mx-auto rounded-lg">
-     <Helmet>
+      <Helmet>
         <title>Sport Specialist | Update Product</title>
-     </Helmet>
+      </Helmet>
       <div className="card   shrink-0 p-16">
         <h1 className="text-[#374151] text-4xl font-bold text-center">
           Update Equipment

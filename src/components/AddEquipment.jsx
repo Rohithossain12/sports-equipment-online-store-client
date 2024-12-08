@@ -12,11 +12,11 @@ const AddEquipment = () => {
     const name = form.name.value;
     const category = form.category.value;
     const description = form.description.value;
-    const price = form.price.value;
+    const price = parseFloat(form.price.value);
     const rating = form.rating.value;
     const customization = form.customization.value;
-    const time = form.time.value;
-    const quantity = form.quantity.value;
+    const time = parseFloat(form.time.value);
+    const quantity = parseFloat(form.quantity.value);
     const photo = form.photo.value;
 
     const newProduct = {
@@ -32,6 +32,31 @@ const AddEquipment = () => {
       quantity,
       photo,
     };
+
+    if (isNaN(price) || price <= 0) {
+      Swal.fire({
+        icon: "error",
+        title: "invalid input",
+        text: "Price added must be number",
+      });
+      return;
+    }
+    if (isNaN(time) || time <= 0) {
+      Swal.fire({
+        icon: "error",
+        title: "invalid input",
+        text: "Time added must be number",
+      });
+      return;
+    }
+    if (isNaN(quantity) || quantity <= 0) {
+      Swal.fire({
+        icon: "error",
+        title: "invalid input",
+        text: "Quantity added must be number",
+      });
+      return;
+    }
 
     // sent data to the server
     fetch("http://localhost:5000/product", {
