@@ -34,3 +34,4 @@ Our online sports equipment store offers a wide range of high-quality gear for a
 - **User Click view details button and show product details**
 
 ## Live Link.
+https://animated-pika-7436f2.netlify.app/myEquipment
