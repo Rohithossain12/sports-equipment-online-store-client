@@ -17,6 +17,7 @@ Our online sports equipment store offers a wide range of high-quality gear for a
 - **sweetalert2**
 - **MongoDb**
 - **React Awesome Reveal**
+- **React simple typewriter**
 
 ## Features.
 
@@ -25,6 +26,7 @@ Our online sports equipment store offers a wide range of high-quality gear for a
 - **User can also update product**
 - **User can also register this website**
 - **You can also Login this Website**
+- **You can also choose dark and light mode on this Website**
 - **User Login with google**
 - **User can also logout this website**
 - **User Click all sports equipment he/she show all product**

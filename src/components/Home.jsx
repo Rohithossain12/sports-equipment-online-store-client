@@ -8,6 +8,7 @@ import SportsCategory from "./SportsCategory";
 import AboutUs from "./AboutUs";
 import { Typewriter } from "react-simple-typewriter";
 
+
 // import Banner from "./Banner";
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
       </div>
       {/* Product Section Limit 6 card  */}
       <section className="container mx-auto px-5 mt-8 mb-10">
+       
         <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-center">
           <span className="text-red-500">
             <Typewriter
