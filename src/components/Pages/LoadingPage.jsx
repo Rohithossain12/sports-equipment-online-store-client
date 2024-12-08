@@ -1,9 +1,10 @@
 import React from "react";
+import { FadeLoader } from "react-spinners";
 
 const LoadingPage = () => {
   return (
     <div className="min-h-screen flex justify-center items-center">
-      <span className="loading loading-bars loading-lg"></span>
+      <FadeLoader aria-setsize={50} />
     </div>
   );
 };
