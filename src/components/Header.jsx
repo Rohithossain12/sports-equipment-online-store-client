@@ -1,9 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider/AuthProvider";
 
 const Header = () => {
   const { users, logout } = useContext(AuthContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  // Handle mouse events to control menu visibility
+  const handleMouseEnter = () => {
+    setIsMenuOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsMenuOpen(false);
+  };
 
   const links = (
     <>
@@ -26,7 +36,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className=" bg-blue-400">
+    <div className=" bg-blue-400 relative">
       <div className="navbar container mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
@@ -48,7 +58,7 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow"
             >
               {links}
             </ul>
@@ -64,27 +74,31 @@ const Header = () => {
         </div>
         <div className="navbar-end flex gap-3">
           {users?.email ? (
-            <div className="dropdown ">
-              <div tabIndex={0} role="button" className=" m-1">
-                <img
-                  className="w-12 h-12 border cursor-pointer object-cover rounded-full "
-                  src={users.photoURL}
-                  alt=""
-                />
-              </div>
-              <ul
-                tabIndex={0}
-                className="dropdown-content mt-2 menu bg-base-100 rounded-box z-[1] w-52 p-6 shadow -right-0  "
-              >
-                <li className="mb-2">
-                  <p className="font-bold">{users.displayName}</p>
-                </li>
-                <li>
-                  <button onClick={logout} className="btn bg-green-500">
+            <div>
+              <img
+                className="w-12 h-12 rounded-full cursor-pointer"
+                src={users.photoURL}
+                alt="User"
+                onMouseEnter={handleMouseEnter}
+                onMouseDownCapture={handleMouseLeave}
+              />
+              {isMenuOpen && (
+                <div
+                  className="absolute right-2  mt-4 w-44 bg-white rounded-lg shadow-lg z-10"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="p-4 border-b text-center">
+                    <p className="text-sm text-gray-700">{users.displayName}</p>
+                  </div>
+                  <button
+                    onClick={logout}
+                    className="w-full text-center px-4 py-3 text-lg text-gray-700 hover:bg-gray-100"
+                  >
                     Logout
                   </button>
-                </li>
-              </ul>
+                </div>
+              )}
             </div>
           ) : (
             <Link
