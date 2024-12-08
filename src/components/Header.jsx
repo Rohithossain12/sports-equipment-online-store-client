@@ -13,12 +13,16 @@ const Header = () => {
       <li>
         <NavLink to="/allSports">All Sports Equipment</NavLink>
       </li>
-      <li>
-        <NavLink to="/addEquipment">Add Equipment</NavLink>
-      </li>
-      <li>
-        <NavLink to="/myEquipment">My Equipment List</NavLink>
-      </li>
+      {users?.email && (
+        <li>
+          <NavLink to="/addEquipment">Add Equipment</NavLink>
+        </li>
+      )}
+      {users?.email && (
+        <li>
+          <NavLink to="/myEquipment">My Equipment List</NavLink>
+        </li>
+      )}
     </>
   );
   return (
@@ -59,9 +63,6 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end flex gap-3">
-          {/* // title={users.displayName} */}
-          {/* {users && <p className=" "></p>} */}
-
           {users?.email ? (
             <div className="dropdown ">
               <div tabIndex={0} role="button" className=" m-1">

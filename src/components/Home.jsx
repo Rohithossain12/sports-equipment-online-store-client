@@ -5,6 +5,7 @@ import { useLoaderData } from "react-router-dom";
 import ProductSection from "./ProductSection";
 import { Helmet } from "react-helmet";
 import SportsCategory from "./SportsCategory";
+import AboutUs from "./AboutUs";
 
 // import Banner from "./Banner";
 
@@ -45,6 +46,9 @@ const Home = () => {
       </section>
       <section className="container mx-auto px-5">
         <SportingGoods></SportingGoods>
+      </section>
+      <section className="container mx-auto px-5">
+        <AboutUs></AboutUs>
       </section>
       <Toaster />
     </div>

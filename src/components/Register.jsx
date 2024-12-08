@@ -64,6 +64,7 @@ const Register = () => {
           .catch((error) => {
             setErrorMessage(error);
           });
+        navigate("/");
         form.reset();
       })
       .catch((error) => {

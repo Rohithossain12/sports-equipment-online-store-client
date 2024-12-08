@@ -16,6 +16,7 @@ Our online sports equipment store offers a wide range of high-quality gear for a
 - **UseEffect**
 - **sweetalert2**
 - **MongoDb**
+- **React Awesome Reveal**
 
 ## Features.
 
