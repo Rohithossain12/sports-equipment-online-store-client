@@ -39,7 +39,7 @@ const MyEquipmentCard = ({ product, setProducts, products }) => {
   };
 
   return (
-    <div className="card bg-base-100 transition hover:scale-105 shadow-xl">
+    <div className="card  bg-base-300 hover:bg-white transition hover:scale-105 shadow-xl">
       <figure className="  p-2">
         <img
           className="w-[328px] h-[193px] object-cover rounded-lg"
@@ -53,8 +53,8 @@ const MyEquipmentCard = ({ product, setProducts, products }) => {
         <p>Price : {price} tk</p>
         <p>Quantity : {quantity}</p>
         <div className=" text-center flex gap-5">
-          <Link to={`/update/${_id}`} className="px-5 py-1.5  bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-white font-bold rounded-full">Update</Link>
-          <button onClick={() => handleDelete(_id)} className="py-1.5 px-5  bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-white font-bold rounded-full">Delete</button>
+          <Link to={`/update/${_id}`} className="px-5 py-1.5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full">Update</Link>
+          <button onClick={() => handleDelete(_id)} className="py-1.5 px-5  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full">Delete</button>
         </div>
       </div>
     </div>

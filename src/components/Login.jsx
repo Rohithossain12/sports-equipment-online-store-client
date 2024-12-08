@@ -65,7 +65,7 @@ const Login = () => {
       <Helmet>
         <title>Sport Specialist | Login </title>
       </Helmet>
-      <div className="  max-w-lg mx-auto bg-green-500  p-5 rounded-lg">
+      <div className="  max-w-lg mx-auto bg-base-300  p-5 rounded-lg">
         <h1 className="text-2xl font-bold ml-8">Please Login Now </h1>
         <form onSubmit={handleLogin} className="card-body ">
           <div className="form-control max-w-lg ">
@@ -94,11 +94,11 @@ const Login = () => {
           </div>
 
           <div className="max-w-lg mt-6">
-            <button className="btn  w-full  font-bold">Login</button>
+            <button className="btn  w-full bg-gradient-to-r from-indigo-500 text-white text-lg via-purple-500 to-pink-500   font-bold">Login</button>
           </div>
         </form>
         <div className="max-w-lg px-8">
-          <button onClick={handleGoogleLogin} className="btn w-full font-bold ">
+          <button onClick={handleGoogleLogin} className="btn w-full font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white ">
             <FaGoogle />
             Login With Google
           </button>

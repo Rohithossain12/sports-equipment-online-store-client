@@ -1,13 +1,24 @@
 import React from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 const SportsCategory = () => {
   return (
-    <div className="  rounded-lg   mb-14">
-      <h1 className="text-center text-xl md:text-2xl lg:text-4xl font-bold underline mb-5 ">
-        Sports Category
+    <div className="  rounded-lg  mb-14">
+      <h1 className="text-center text-red-500 text-xl md:text-2xl lg:text-4xl font-bold underline mb-5 ">
+        
+        <Typewriter
+        words={["Sports Category"]}
+        loop={true}
+        cursor
+        cursorStyle="...!"
+        typeSpeed={100}
+        deleteSpeed={100}
+        delaySpeed={1000}>
+
+        </Typewriter>
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 relative ">
-        <div className="text-center transition hover:scale-105">
+      <div className="grid  grid-cols-2 md:grid-cols-3 lg:grid-cols-4 relative ">
+        <div className="text-center transition hover:scale-105  ">
           <img
             src="https://dawsonsportsme.com/cdn/shop/files/ATHLETICS-W_a328d818-34fb-42fc-a1ea-363b3dc476e9.jpg?v=1699599003&width=500"
             alt=""

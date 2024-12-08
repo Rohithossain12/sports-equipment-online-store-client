@@ -77,8 +77,8 @@ const Register = () => {
       <Helmet>
         <title>Sport Specialist | Register</title>
       </Helmet>
-      <div className="  max-w-lg mx-auto border bg-green-500 p-5 rounded-lg">
-        <h1 className="text-2xl font-bold ml-8">Please Register Now </h1>
+      <div className="  max-w-lg mx-auto border bg-base-300  p-5 rounded-lg">
+        <h1 className="text-2xl font-bold ml-8 ">Please Register Now </h1>
         <form onSubmit={handleRegister} className="card-body ">
           <div className="form-control max-w-lg ">
             <label className="label">
@@ -130,11 +130,11 @@ const Register = () => {
           </div>
 
           <div className="max-w-lg mt-6">
-            <button className="btn  w-full  font-bold">Register</button>
+            <button className="btn  w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-lg  font-bold">Register</button>
           </div>
         </form>
         <div className="max-w-lg px-8">
-          <button onClick={handleGoogleLogin} className="btn w-full font-bold ">
+          <button onClick={handleGoogleLogin} className="btn w-full font-bold text-lg bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white">
             <FaGoogle /> Login With Google
           </button>
         </div>

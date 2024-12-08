@@ -22,7 +22,7 @@ const ViewDetails = () => {
       <Helmet>
         <title>Sport Specialist | View Details</title>
       </Helmet>
-      <div className="flex flex-col md:flex-row max-w-2xl  border rounded-xl  space-y-4  mx-auto gap-5 ">
+      <div className="flex flex-col bg-base-300 md:flex-row max-w-2xl  border rounded-xl  space-y-4  mx-auto gap-5 ">
         <div className=" p-4 pr-0 ">
           <img
             className="w-[309px] h-[242px] overflow-hidden rounded-lg "

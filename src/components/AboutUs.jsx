@@ -1,12 +1,23 @@
 import React from "react";
+import { Typewriter } from "react-simple-typewriter";
 
 const AboutUs = () => {
   return (
     <div className="mt-8 mb-10">
-      <h1 className="text-xl md:text-2xl lg:text-4xl text-center mb-5 underline">
-        About us
+      <h1 className="text-red-500 text-xl md:text-2xl lg:text-4xl text-center mb-5 underline">
+        
+        <Typewriter
+        words={["About us"]}
+        loop={true}
+        cursor
+        cursorStyle="...!"
+        typeSpeed={100}
+        deleteSpeed={100}
+        delaySpeed={1000}>
+
+        </Typewriter>
       </h1>
-      <div className="collapse collapse-arrow bg-base-200 border border-green-500 mb-2">
+      <div className="collapse collapse-arrow bg-base-200 border  mb-2">
         <input type="radio" name="my-accordion-2" defaultChecked />
         <div className="collapse-title text-xl font-medium">
           What types of sports equipment do you sell?
@@ -20,7 +31,7 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200 border border-green-500 mb-2">
+      <div className="collapse collapse-arrow bg-base-200 border ">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           Do you provide customization options for sports gear?
@@ -33,7 +44,7 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200 mb-2 border-green-500 border">
+      <div className="collapse collapse-arrow bg-base-200 mb-2 ">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           What is your return and exchange policy?
@@ -46,7 +57,7 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200 mb-2 border border-green-500">
+      <div className="collapse collapse-arrow bg-base-200 mb-2 border ">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           Do you offer discounts for bulk orders?
@@ -58,7 +69,7 @@ const AboutUs = () => {
           </p>
         </div>
       </div>
-      <div className="collapse collapse-arrow bg-base-200 border border-green-500">
+      <div className="collapse collapse-arrow bg-base-200 border ">
         <input type="radio" name="my-accordion-2" />
         <div className="collapse-title text-xl font-medium">
           How long does delivery take?

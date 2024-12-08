@@ -20,7 +20,7 @@ const ProductSection = ({ product }) => {
         <div className="card-actions ">
           <Link
             to={`/viewDetails/${product._id}`}
-            className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% py-1.5 px-3 rounded-2xl mt-2 text-white font-bold"
+            className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  py-1.5 px-3 rounded-2xl mt-2 text-white font-bold"
           >
             View Details
           </Link>

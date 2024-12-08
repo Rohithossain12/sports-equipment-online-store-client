@@ -221,7 +221,7 @@ const AddEquipment = () => {
           </div>
 
           <div className="form-control mt-6">
-            <button className="btn bg-[#D2B48C] font-bold bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-white">
+            <button className="btn bg-[#D2B48C] font-bold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-lg text-white">
               Add Equipment
             </button>
           </div>

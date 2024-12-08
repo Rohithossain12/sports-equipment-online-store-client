@@ -109,19 +109,21 @@ const Header = () => {
               )}
             </div>
           ) : (
-            <Link
-              to="/login"
-              className="px-4 py-2 bg-white rounded-lg font-semibold"
-            >
-              Login
-            </Link>
+            <div className="flex gap-3">
+              <Link
+                to="/login"
+                className="px-4 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  rounded-lg font-semibold text-white"
+              >
+                Login
+              </Link>
+              <Link
+                to="/register"
+                className="px-4 py-2 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg font-semibold"
+              >
+                Register
+              </Link>
+            </div>
           )}
-
-          {/* <label className="swap swap-rotate ml-4">
-            <input type="checkbox" onClick={handleToggleTheme} name="" id="" />
-            <div className="swap-on">Dark</div>
-            <div className="swap-of">Light</div>
-          </label> */}
         </div>
       </div>
     </div>

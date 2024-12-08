@@ -19,7 +19,7 @@ const AllSportsEquipment = () => {
   };
 
   return (
-    <div className="overflow-x-auto min-h-screen px-5 container mx-auto mt-10 mb-12">
+    <div className="overflow-x-auto  min-h-screen px-5 container mx-auto mt-10 mb-12">
       <Helmet>
         <title>Sport Specialist | All Sports Equipment</title>
       </Helmet>
@@ -41,7 +41,7 @@ const AllSportsEquipment = () => {
               <td>
                 <Link
                   to={`/viewDetails/${product._id}`}
-                  className="px-3 py-2  bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% text-white font-bold rounded-full"
+                  className="px-3 py-2  bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  text-white font-bold rounded-full"
                 >
                   Details
                 </Link>
@@ -53,7 +53,7 @@ const AllSportsEquipment = () => {
       <div className="text-center mt-4">
         <button
           onClick={handleSortByPrice}
-          className="bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% py-1.5 px-3 rounded-2xl mt-2 text-white font-bold"
+          className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500  py-1.5 px-3 rounded-2xl mt-2 text-white font-bold"
         >
           Sort by Price
         </button>
