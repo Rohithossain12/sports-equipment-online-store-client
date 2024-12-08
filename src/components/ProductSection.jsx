@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ProductSection = ({ product }) => {
   const { _id, name, photo, category, price, quantity } = product || {};
   return (
-    <div className="card bg-base-300 hover:bg-blue-400 transition hover:scale-105 shadow-xl">
+    <div className="card bg-base-300 hover:bg-white transition hover:scale-105 shadow-xl">
       <figure className="  p-2">
         <img
           className="w-[328px] h-[193px] object-cover rounded-lg"

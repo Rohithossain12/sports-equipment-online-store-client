@@ -34,7 +34,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className=" bg-blue-400 relative">
+    <div className=" bg-base-300 relative">
       <div className="navbar container mx-auto ">
         <div className="navbar-start">
           <div className="dropdown">
