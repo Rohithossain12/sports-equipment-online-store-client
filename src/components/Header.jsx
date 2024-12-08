@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider/AuthProvider";
 
 const Header = () => {
-  const { users, logout } = useContext(AuthContext);
+  const { users, logout, handleToggleTheme } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Handle mouse events to control menu visibility
@@ -20,19 +20,17 @@ const Header = () => {
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
+
       <li>
+        {" "}
         <NavLink to="/allSports">All Sports Equipment</NavLink>
       </li>
-      {users?.email && (
-        <li>
-          <NavLink to="/addEquipment">Add Equipment</NavLink>
-        </li>
-      )}
-      {users?.email && (
-        <li>
-          <NavLink to="/myEquipment">My Equipment List</NavLink>
-        </li>
-      )}
+      <li>
+        {users?.email && <NavLink to="/addEquipment">Add Equipment</NavLink>}
+      </li>
+      <li>
+        {users?.email && <NavLink to="/myEquipment">My Equipment List</NavLink>}
+      </li>
     </>
   );
   return (
@@ -91,9 +89,19 @@ const Header = () => {
                   <div className="p-4 border-b text-center">
                     <p className="text-sm text-gray-700">{users.displayName}</p>
                   </div>
+                  <div className="text-center justify-center gap-2 p-4 border-b flex">
+                    <p>Light</p>
+                    <input
+                      onClick={handleToggleTheme}
+                      type="checkbox"
+                      value="synthwave"
+                      className="toggle theme-controller"
+                    />
+                    <p>Dark</p>
+                  </div>
                   <button
                     onClick={logout}
-                    className="w-full text-center px-4 py-3 text-lg text-gray-700 hover:bg-gray-100"
+                    className="w-full text-center px-4 py-3 text-lg text-gray-700 hover:bg-gray-200"
                   >
                     Logout
                   </button>
@@ -108,6 +116,12 @@ const Header = () => {
               Login
             </Link>
           )}
+
+          {/* <label className="swap swap-rotate ml-4">
+            <input type="checkbox" onClick={handleToggleTheme} name="" id="" />
+            <div className="swap-on">Dark</div>
+            <div className="swap-of">Light</div>
+          </label> */}
         </div>
       </div>
     </div>
