@@ -1,6 +1,3 @@
-Here is a well-structured `README.md` file for your **Sport Specialist** project:  
-
----
 
 # 🏆 Sport Specialist  
 ![Sport Specialist Banner](https://i.ibb.co.com/9H8DPyJg/iamge2.png)
@@ -142,4 +139,3 @@ This project is **MIT Licensed**. See the [LICENSE](LICENSE) file for details.
 
 ---
 
-This `README.md` is clean, structured, and easy to follow. Let me know if you need any modifications! 🚀
